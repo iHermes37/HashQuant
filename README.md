@@ -1,2 +1,2 @@
-# CryptoQuant
-CryptoQuant
+# HashQuant
+Cryptocurrency Quantitative Trading System
