@@ -1,0 +1,32 @@
+[package]
+name    = "hq-datafeed"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hq-core      = { path = "../core" }
+hq-exchange  = { path = "../exchange" }
+
+tokio        = { version = "1", features = ["full"] }
+async-trait  = "0.1"
+futures      = "0.3"
+serde        = { version = "1", features = ["derive"] }
+serde_json   = "1"
+chrono       = { version = "0.4", features = ["serde"] }
+thiserror    = "1"
+tracing      = "0.1"
+
+# CSV 读取
+csv          = "1"
+
+# SQLite 存储（可选，feature 控制）
+rusqlite     = { version = "0.31", features = ["bundled"], optional = true }
+
+[features]
+default  = []
+sqlite   = ["rusqlite"]
+
+[dev-dependencies]
+tokio-test          = "0.4"
+tracing-subscriber  = "0.3"
+tempfile            = "3"

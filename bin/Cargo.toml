@@ -1,0 +1,33 @@
+[package]
+name    = "hashquant-bin"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+hq-core        = { path = "../crates/core" }
+hq-exchange    = { path = "../crates/exchange" }
+hq-datafeed    = { path = "../crates/datafeed" }
+hq-strategy    = { path = "../crates/strategy" }
+hq-backtester  = { path = "../crates/backtester" }
+
+tokio              = { version = "1", features = ["full"] }
+tracing            = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+chrono             = { version = "0.4", features = ["serde"] }
+dotenv             = "0.15"
+reqwest            = { version = "0.12", features = ["json", "rustls-tls"] }
+serde_json         = "1"
+
+[[bin]]
+name = "testnet"
+path = "src/testnet.rs"
+
+[[bin]]
+name = "backtest"
+path = "src/backtest.rs"
+
+[[bin]]
+name = "fetch_data"
+path = "src/fetch_data.rs"
