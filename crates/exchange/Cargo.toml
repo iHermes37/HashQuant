@@ -1,0 +1,32 @@
+[package]
+name    = "hq-exchange"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hq-core     = { path = "../core" }
+tokio       = { version = "1", features = ["full"] }
+async-trait = "0.1"
+futures     = "0.3"
+reqwest     = { version = "0.12", features = ["json", "rustls-tls"] }
+serde       = { version = "1", features = ["derive"] }
+serde_json  = "1"
+hmac        = "0.12"
+sha2        = "0.10"
+hex         = "0.4"
+base64      = "0.22"
+chrono      = { version = "0.4", features = ["serde"] }
+thiserror   = "1"
+uuid        = { version = "1", features = ["v4"] }
+tracing     = "0.1"
+dotenv      = "0.15"
+
+[dev-dependencies]
+futures  = "0.3"
+tokio    = { version = "1", features = ["full"] }
+hq-core  = { path = "../core" }
+chrono   = { version = "0.4", features = ["serde"] }
+
+[[example]]
+name = "demo"
+path = "examples/demo.rs"

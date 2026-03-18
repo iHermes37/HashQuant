@@ -1,6 +1,14 @@
 /target
 
+data/
+docs/
 
-# 编辑器文件
+.env
+.env.local
+**/target/
+data/historical/
+data/logs/
+.DS_Store
+Thumbs.db
 .idea/
 .vscode/

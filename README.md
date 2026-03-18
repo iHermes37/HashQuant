@@ -1,2 +1,0 @@
-# CryptoQuant
-CryptoQuant
